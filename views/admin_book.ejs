@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>CMRIT Library</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="">CMRIT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="/admin_home">Home <span class="sr-only">(current)</span></a>
+                <!-- <a class="nav-link active" href="/login">Login</a>
+                <a class="nav-link active" href="/register">Register</a> -->
+                <a class="nav-link active" href="/add_book">Add Book</a>
+                
+                <a class="nav-link active" href="/admin_notice">Notice</a>
+
+            </div>
+            <div class="navbar-nav ml-auto nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    href="/mainhome"><%=username%></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/book_logs">Book logs</a>
+                    <a class="dropdown-item" href="/compose-research">Compose Research Paper</a>
+                    <a class="dropdown-item" href="/">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-bar ml-auto" >
+        <form class="form-inline " action="/search-bar" method="POST">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" name="searchbook" class="form-control" id="inputPassword2" placeholder="Search Books!!">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Search</button>
+        </form>
+    </div>
+    
+
+    <!-- End of the search bar -->
+
+    <!-- Table of contents -->
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Book Id</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Autors</th>
+                <th scope="col">Edition</th>
+                <th scope="col">Status</th>
+                <th scope="col">Department</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% result.forEach(function(result){ %>
+            <tr>
+                <th scope="row"><%=result.bid%></th>
+                <td><%=result.name%></td>
+                <td><%=result.authors%></td>
+                <td><%=result.edition%></td>
+                <td><%=result.status%></td>
+                <td><%=result.department%></td>
+            </tr>
+            <% }) %>
+
+
+        </tbody>
+    </table>
+
+
+    <!-- End of table of contents -->
+
+
+</body>
+
+<%- include('footer.ejs') %>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>CMRIT Library</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">CMRIT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="/admin_home">Home <span class="sr-only">(current)</span></a>
+                <!-- <a class="nav-link active" href="/login">Login</a>
+                <a class="nav-link active" href="/register">Register</a> -->
+                <a class="nav-link active" href="/admin_book">Book</a>
+                <a class="nav-link active" href="/admin_notice">Notice</a>
+
+            </div>
+            <div class="navbar-nav ml-auto nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    href="/mainhome">
+                    <%=username%>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/book_logs">Book Logs</a>
+                    <a class="dropdown-item" href="/compose-research">Compose Research Paper</a>
+                    <a class="dropdown-item" href="/">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- alert message content -->
+    <% if(message.length> 0){ %>
+        <div class="alert alert-success">
+            <%=message%>
+        </div>
+        <%}%>
+            <!-- End of alert message -->
+            <!-- Input form -->
+            <form class="row g-3 needs-validation add_book_form" novalidate action="/add_book" method="POST">
+                <div class="col-md-6">
+                    <label for="validationCustom01" class="form-label">Book Id</label>
+                    <input type="text" name="bid" class="form-control" id="validationCustom01" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationCustom02" class="form-label">Name</label>
+                    <input type="text" name="bname" class="form-control" id="validationCustom02" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationCustom02" class="form-label">Author Name</label>
+                    <input type="text" name="aname" class="form-control" id="validationCustom02" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                </div>
+                <div class="col-md-6">
+                    <label for="validationCustom03" class="form-label">Edition</label>
+                    <input type="text" name="edition" class="form-control" id="validationCustom03" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid city.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationCustom02" class="form-label">Status</label>
+                    <input type="text" name="status" class="form-control" id="validationCustom02" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="validationCustom02" class="form-label">Department</label>
+                    <input type="text" name="department" class="form-control" id="validationCustom02" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="col-6 add_book_button">
+                    <button class="btn btn-primary" type="submit">Add Book</button>
+                </div>
+            </form>
+</body>
+
+<%- include('footer.ejs') %>

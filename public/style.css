@@ -1,0 +1,47 @@
+body.normal{
+    background-image: url('Library.jpg');
+}
+
+.container{
+    padding: 5%;
+    background-color: black;
+    color: white;
+    margin-top: 15%;
+    margin-right: 40%;
+    width: fit-content;
+    opacity: 0.6;
+   
+}
+
+.container-login{
+    padding: 5%;
+    width: 40%;
+    height: 60%;
+    background-color: black;
+    color: white;
+    margin-top: 10rem;
+    margin-left: 22rem;
+    opacity: 0.8;
+}
+
+.search-bar{
+    margin-top: 1%;
+    
+}
+
+.compose-form{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* add_book css */
+.add_book_form{
+    padding: 5%;
+    margin-top: 1%;
+}
+
+.add_book_button{
+    margin-top: 1%;
+}
